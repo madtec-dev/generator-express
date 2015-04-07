@@ -87,6 +87,29 @@ module.exports = generators.Base.extend({
         done();
       }.bind(this));
     },
+
+    cssFramework: function () {
+      if ( this.options.cssPreprocessor == 'sass' ) {
+        var done = this.async();
+        var prompt = [{
+          type: 'confirm',
+          name: 'cssFramework',
+          message: 'Do you want to install inuitcss?'
+        }]
+
+        this.prompt(prompt, function (response) {
+          if(response.cssFramework == true) {
+            this.options.cssFramework = 'inuit';
+          }
+          else {
+            this.options.cssFramework = '';
+          }
+          console.log(this.options.cssFramework);
+          done();
+        }.bind(this));
+      }
+    },
+
     database: function () {
 
       if (this.options.database || !this.options.mvc) {
@@ -173,9 +196,15 @@ module.exports = generators.Base.extend({
 
       // css
       var stylesheets = this.options.cssPreprocessor;
+      var cssFramework = this.options.cssFramework;
       if(stylesheets === 'none') stylesheets = 'css';
       if(stylesheets === 'node-sass') stylesheets = 'sass';
-      this.sourceRoot(path.join(__dirname, 'templates', 'css', stylesheets));
+      if( cssFramework === 'inuit' ) {
+        this.sourceRoot(path.join(__dirname, 'templates', 'css', 'inuit'));
+      }
+      else {
+        this.sourceRoot(path.join(__dirname, 'templates', 'css', stylesheets));
+      }
       this.directory('.', 'public/css');
 
       // grunt/gulp

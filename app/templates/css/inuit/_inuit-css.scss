@@ -1,0 +1,25 @@
+@import "../components/inuit-defaults/settings.defaults";
+@import '../components/inuit-responsive-settings/_settings.responsive';
+
+
+@import "../components/inuit-functions/tools.functions";
+@import "../components/inuit-mixins/tools.mixins";
+@import "../components/inuit-tools-widths/_tools.widths";
+@import '../components/inuit-responsive-tools/_tools.responsive';
+
+
+@import "../components/inuit-normalize/generic.normalize";
+@import "../components/inuit-box-sizing/generic.box-sizing";
+
+
+@import "../components/inuit-page/base.page";
+
+
+$inuit-enable-layout--middle: true;
+$inuit-enable-layout--center: true;
+$inuit-enable-layout--huge: true;
+@import '../components/inuit-layout/_objects.layout';
+
+
+@import '../components/inuit-widths/_trumps.widths';
+@import '../components/inuit-widths-responsive/_trumps.widths-responsive';
