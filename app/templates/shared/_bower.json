@@ -7,10 +7,12 @@
     "components"
   ],
  "dependencies": {
+   <% if(options.cssFramework == 'inuit'){ %>   
    "inuit-starter-kit": "~0.2.9",
    "inuit-spacing-responsive": "~0.0.7",
    "inuit-widths-responsive": "~0.2.2",
    "inuit-tools-widths": "~0.1.4",
    "inuit-layout": "~0.3.2"
+   <% } %>
  }
 }
