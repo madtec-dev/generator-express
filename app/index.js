@@ -92,19 +92,24 @@ module.exports = generators.Base.extend({
       if ( this.options.cssPreprocessor == 'sass' ) {
         var done = this.async();
         var prompt = [{
-          type: 'confirm',
+          type: 'list',
           name: 'cssFramework',
-          message: 'Do you want to install inuitcss?'
+          message: 'Select a CSS Framework to use:',
+          choices: [
+            'None',
+            'Inuit',
+            'Bootstrap'
+          ],
+
         }]
 
         this.prompt(prompt, function (response) {
-          if(response.cssFramework == true) {
-            this.options.cssFramework = 'inuit';
+          if(response.cssFramework != 'None') {
+            this.options.cssFramework = response.cssFramework.toLowerCase();
           }
           else {
             this.options.cssFramework = '';
           }
-          console.log(this.options.cssFramework);
           done();
         }.bind(this));
       }
