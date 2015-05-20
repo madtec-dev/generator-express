@@ -18,6 +18,7 @@
 $inuit-enable-layout--middle: true;
 $inuit-enable-layout--center: true;
 $inuit-enable-layout--huge: true;
+$inuit-layout-gutter: 12px;
 @import '../components/inuit-layout/_objects.layout';
 @import '../components/inuit-media/_objects.media';
 @import '../components/inuit-list-bare/_objects.list-bare';
@@ -25,7 +26,8 @@ $inuit-enable-layout--huge: true;
 @import '../components/inuit-buttons/_objects.buttons';
 @import '../components/inuit-flag/_objects.flag';
 
-
+$inuit-widths-columns: (12);
+$inuit-widths-columns-responsive: (12);
 @import '../components/inuit-widths/_trumps.widths';
 @import '../components/inuit-widths-responsive/_trumps.widths-responsive';
 
@@ -38,7 +40,12 @@ $inuit-enable-paddings--huge: true;
 $inuit-enable-paddings--large: true;
 $inuit-enable-paddings--tiny: true;
 $inuit-enable-paddings: true;
+
+$inuit-enable-responsive-paddings: true;
+$inuit-enable-responsive-paddings--tiny: true;
+$inuit-enable-responsive-paddings--small: true;
 @import '../components/inuit-spacing/_trumps.spacing';
+@import '../components/inuit-spacing-responsive/_trumps.spacing-responsive';
 
 
 $inuit-enable-responsive-margins: true;
